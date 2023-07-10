@@ -1,7 +1,9 @@
 import "./style.css";
+import { useState } from "react";
 
 export default function App() {
-  const checkBoxData = [
+  const [length, setLength] = useState(4);
+  const [checkBoxData, setCheckBoxData] = useState([
     {
       title: "Include Uppercase Letters",
       state: false,
@@ -18,7 +20,7 @@ export default function App() {
       title: "Include Symbols",
       state: false,
     },
-  ];
+  ]);
 
   return (
     <div className="container">
@@ -32,10 +34,16 @@ export default function App() {
       {/* Character Length */}
       <div className="charLength">
         <span>
-          <label>Character Length</label>
+          <label>{length}</label>
           <label>4</label>
         </span>
-        <input type="range" min="4" max="20" onClick={() => {}}></input>
+        <input
+          type="range"
+          min="4"
+          max="20"
+          value={length}
+          onChange={(e) => setLength(e.target.value)}
+        ></input>
       </div>
       {/* checkboxes */}
       <div className="checkboxes">
