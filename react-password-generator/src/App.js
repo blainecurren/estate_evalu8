@@ -1,9 +1,10 @@
 import "./style.css";
 import { useState } from "react";
+import usePasswordGenerator from "./hooks/use-password-generator";
 
 export default function App() {
   const [length, setLength] = useState(4);
-  const [checkBoxData, setCheckBoxData] = useState([
+  const [checkboxData, setCheckboxData] = useState([
     {
       title: "Include Uppercase Letters",
       state: false,
@@ -22,15 +23,25 @@ export default function App() {
     },
   ]);
 
+  const handleCheckboxChange = (index) => {
+    const updatedCheckboxData = [...checkboxData];
+    checkboxData[index].state = !checkboxData[index].state;
+    setCheckboxData(updatedCheckboxData);
+  };
+
+  const {} = usePasswordGenerator();
+
   return (
     <div className="container">
       {/* Password text and Copy */}
-      <div className="header">
-        <div className="title">;lakjsdfl;k</div>
-        <button className="copyBtn" onClick={() => {}}>
-          Copy
-        </button>
-      </div>
+      {password && (
+        <div className="header">
+          <div className="title">{password}</div>
+          <button className="copyBtn" onClick={() => {}}>
+            Copy
+          </button>
+        </div>
+      )}
       {/* Character Length */}
       <div className="charLength">
         <span>
@@ -47,10 +58,14 @@ export default function App() {
       </div>
       {/* checkboxes */}
       <div className="checkboxes">
-        {checkBoxData.map((checkbox, index) => {
+        {checkboxData.map((checkbox, index) => {
           return (
             <div key={index}>
-              <input type="checkbox" checked={checkbox.state} />
+              <input
+                type="checkbox"
+                onChange={() => handleCheckboxChange(index)}
+                checked={checkbox.state}
+              />
               <label>{checkbox.title}</label>
             </div>
           );
