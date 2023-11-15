@@ -1,0 +1,19 @@
+$mainColor: #7395ae;
+
+$secondaryColor: #2f4454;
+
+$widthM: 768px;
+
+$widthT: 1368px;
+
+@mixin mobile {
+  @media (max-width: #{$widthM}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (max-width: #{$widthT}) {
+    @content;
+  }
+}
