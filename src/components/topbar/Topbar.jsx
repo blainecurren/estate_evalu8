@@ -6,7 +6,7 @@ export default function Topbar({ menuOpen, setMenuOpen }) {
       <div className="wrapper">
         <div className="center">
           <a href="#intro" className="logo">
-            estate evalu8.
+            ESTATE EVALU8
           </a>
         </div>
         <div className="right">

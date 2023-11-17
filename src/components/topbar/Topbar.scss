@@ -24,14 +24,14 @@
 
     .center {
       display: flex;
-      align-items: center;
 
       .logo {
         font-size: 40px;
         font-weight: 700;
         text-decoration: none;
         color: inherit;
-        margin-right: 40px;
+        // margin-right: 40px;
+        margin-left: 525px;
       }
 
       @include mobile {
