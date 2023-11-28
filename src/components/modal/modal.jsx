@@ -2,10 +2,32 @@ import React, { useState } from "react";
 import "./modal.scss";
 
 export default function Modal() {
-  const [modal, setModal] = useState(false);
+  const [modal, setModal, isOpen, onClose, sections] = useState(false);
+
+  const [currentSection, setCurrentSection] = useState(0);
+
   const toggleModal = () => {
     setModal(!modal);
   };
+
+  const handleNext = () => {
+    if (currentSection < sections.length - 1) {
+      setCurrentSection((prevSection) => prevSection + 1);
+    }
+  };
+
+  const handlePrev = () => {
+    if (currentSection > 0) {
+      setCurrentSection((prevSection) => prevSection - 1);
+    }
+  };
+
+  const handleInputChange = (sectionIndex, questionIndex, value) => {
+    console.log(
+      `Section ${sectionIndex + 1}, Question ${questionIndex + 1}: ${value} `
+    );
+  };
+
   return (
     <>
       <button onClick={toggleModal} className="btn-modal">
