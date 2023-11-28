@@ -1,7 +1,5 @@
 import React from "react";
 import Intro from "./components/intro/Intro";
-import About from "./components/about/About";
-
 import Contact from "./components/contact/Contact";
 import "./app.scss";
 import { useState } from "react";
@@ -16,8 +14,6 @@ function App() {
       <Menu menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
       <div className="sections">
         <Intro />
-        {/* <About /> */}
-       
         <Contact />
       </div>
     </div>

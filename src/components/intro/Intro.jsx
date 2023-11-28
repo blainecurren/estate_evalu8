@@ -1,8 +1,12 @@
-import { useEffect, useRef } from "react";
 import "./intro.scss";
+import Modal from "../modal/modal";
 
 const Intro = () => {
-  return <div>Home</div>;
+  return (
+    <div>
+      <Modal />
+    </div>
+  );
 };
 
 export default Intro;
