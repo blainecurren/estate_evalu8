@@ -2,11 +2,9 @@ import React, { useState } from "react";
 import "./modal.scss";
 
 export default function Modal() {
-  const [modal, setModal, isOpen, onClose, sections] = useState(false);
-
-  // TODO: Add sections so were not getting error 'Cannot read properties of undefined'
-
+  const [modal, setModal] = useState(false);
   const [currentSection, setCurrentSection] = useState(0);
+  const [sections, setSections] = useState([]);
 
   const toggleModal = () => {
     setModal(!modal);
@@ -30,21 +28,19 @@ export default function Modal() {
     );
   };
 
-
-
   return (
     <>
       <button onClick={toggleModal} className="btn-modal">
         open
       </button>
       {modal && (
-        <div className={`modal ${isOpen ? "open" : "closed"}`}>
+        <div className={`modal ${modal ? "open" : "closed"}`}>
           <div className="overlay"></div>
           <div className="modal-content">
-            <h2>{sections[currentSection].title}</h2> // error
-            {
-              sections[
-                currentSection.questions.map((question, questionIndex) => (
+            {sections.length > 0 && <h2>{sections[currentSection].title}</h2>}
+            {sections[currentSection] &&
+              sections[currentSection].questions.map(
+                (question, questionIndex) => (
                   <div key={questionIndex} className="question">
                     <label>
                       {question.text}
@@ -61,9 +57,8 @@ export default function Modal() {
                       />
                     </label>
                   </div>
-                ))
-              ]
-            }
+                )
+              )}
             <button onClick={toggleModal} className="close-modal">
               close
             </button>
@@ -76,7 +71,6 @@ export default function Modal() {
             >
               Next
             </button>
-            <button onClick={onClose}>Close</button>
           </div>
         </div>
       )}
