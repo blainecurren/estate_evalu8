@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 
+// TODO: Change answerOptions to input based responses
 export default function App() {
   const questions = [
     {
-      questionText: "What is the capital of France?",
+      questionText: "How many bedrooms?",
       answerOptions: [
         { answerText: "New York", isCorrect: false },
         { answerText: "London", isCorrect: false },
@@ -12,7 +13,7 @@ export default function App() {
       ],
     },
     {
-      questionText: "Who is CEO of Tesla?",
+      questionText: "How many bathrooms?",
       answerOptions: [
         { answerText: "Jeff Bezos", isCorrect: false },
         { answerText: "Elon Musk", isCorrect: true },
@@ -21,7 +22,7 @@ export default function App() {
       ],
     },
     {
-      questionText: "The iPhone was created by which company?",
+      questionText: "Square Footage?",
       answerOptions: [
         { answerText: "Apple", isCorrect: true },
         { answerText: "Intel", isCorrect: false },
@@ -30,7 +31,70 @@ export default function App() {
       ],
     },
     {
-      questionText: "How many Harry Potter books are there?",
+      questionText: "Rent per unit",
+      answerOptions: [
+        { answerText: "1", isCorrect: false },
+        { answerText: "4", isCorrect: false },
+        { answerText: "6", isCorrect: false },
+        { answerText: "7", isCorrect: true },
+      ],
+    },
+    {
+      questionText: "How many vacancies",
+      answerOptions: [
+        { answerText: "1", isCorrect: false },
+        { answerText: "4", isCorrect: false },
+        { answerText: "6", isCorrect: false },
+        { answerText: "7", isCorrect: true },
+      ],
+    },
+    {
+      questionText: "List any other income",
+      answerOptions: [
+        { answerText: "1", isCorrect: false },
+        { answerText: "4", isCorrect: false },
+        { answerText: "6", isCorrect: false },
+        { answerText: "7", isCorrect: true },
+      ],
+    },
+    {
+      questionText: "Estimated Repairs & Maintenance Cost",
+      answerOptions: [
+        { answerText: "1", isCorrect: false },
+        { answerText: "4", isCorrect: false },
+        { answerText: "6", isCorrect: false },
+        { answerText: "7", isCorrect: true },
+      ],
+    },
+    {
+      questionText: "Estimated Utilities",
+      answerOptions: [
+        { answerText: "1", isCorrect: false },
+        { answerText: "4", isCorrect: false },
+        { answerText: "6", isCorrect: false },
+        { answerText: "7", isCorrect: true },
+      ],
+    },
+    {
+      questionText: "Estimated Taxes",
+      answerOptions: [
+        { answerText: "1", isCorrect: false },
+        { answerText: "4", isCorrect: false },
+        { answerText: "6", isCorrect: false },
+        { answerText: "7", isCorrect: true },
+      ],
+    },
+    {
+      questionText: "Estimated Insurance",
+      answerOptions: [
+        { answerText: "1", isCorrect: false },
+        { answerText: "4", isCorrect: false },
+        { answerText: "6", isCorrect: false },
+        { answerText: "7", isCorrect: true },
+      ],
+    },
+    {
+      questionText: "Replacement Reserve",
       answerOptions: [
         { answerText: "1", isCorrect: false },
         { answerText: "4", isCorrect: false },
