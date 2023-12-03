@@ -63,6 +63,8 @@ export default function App() {
     updatedQuestions[currentQuestion].response = event.target.value;
   };
 
+  const handleSubmit = () => {}
+
   return (
     <div className="app">
       <>
@@ -80,7 +82,9 @@ export default function App() {
             value={questions[currentQuestion].response}
             onChange={handleInputChange}
           />
+          <button>Previous</button>
           <button onClick={handleAnswerOptionClick}>Next</button>
+          <button type="submit">Submit</button>
         </div>
       </>
     </div>
