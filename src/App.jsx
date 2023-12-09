@@ -1,92 +1,92 @@
-import React, { useState } from "react";
-
 // TODO: Change answerOptions to input based responses
-export default function App() {
-  const questions = [
+import { useState } from "react";
+import "./index.css";
+import FormInput from "./components/FormInput/FormInput";
+
+const App = () => {
+  const [values, setValues] = useState({
+    username: "",
+    email: "",
+    birthday: "",
+    password: "",
+    confirmPassword: "",
+  });
+
+  const inputs = [
     {
-      questionText: "How many bedrooms?",
-      response: "",
+      id: 1,
+      name: "username",
+      type: "text",
+      placeholder: "Username",
+      errorMessage:
+        "Username should be 3-16 characters and shouldn't include any special character!",
+      label: "Username",
+      pattern: "^[A-Za-z0-9]{3,16}$",
+      required: true,
     },
     {
-      questionText: "How many bathrooms?",
-      response: "",
+      id: 2,
+      name: "email",
+      type: "email",
+      placeholder: "Email",
+      errorMessage: "It should be a valid email address!",
+      label: "Email",
+      required: true,
     },
     {
-      questionText: "Square Footage?",
-      response: "",
+      id: 3,
+      name: "birthday",
+      type: "date",
+      placeholder: "Birthday",
+      label: "Birthday",
     },
     {
-      questionText: "Rent per unit",
-      response: "",
+      id: 4,
+      name: "password",
+      type: "password",
+      placeholder: "Password",
+      errorMessage:
+        "Password should be 8-20 characters and include at least 1 letter, 1 number and 1 special character!",
+      label: "Password",
+      pattern: `^(?=.*[0-9])(?=.*[a-zA-Z])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,20}$`,
+      required: true,
     },
     {
-      questionText: "How many vacancies",
-      response: "",
-    },
-    {
-      questionText: "List any other income",
-      response: "",
-    },
-    {
-      questionText: "Estimated Repairs & Maintenance Cost",
-      response: "",
-    },
-    {
-      questionText: "Estimated Utilities",
-      response: "",
-    },
-    {
-      questionText: "Estimated Taxes",
-      response: "",
-    },
-    {
-      questionText: "Estimated Insurance",
-      response: "",
-    },
-    {
-      questionText: "Replacement Reserve",
-      response: "",
+      id: 5,
+      name: "confirmPassword",
+      type: "password",
+      placeholder: "Confirm Password",
+      errorMessage: "Passwords don't match!",
+      label: "Confirm Password",
+      pattern: values.password,
+      required: true,
     },
   ];
 
-  const [currentQuestion, setCurrentQuestion] = useState(0);
-
-  const handleAnswerOptionClick = () => {
-    const nextQuestion = currentQuestion + 1;
-    if (nextQuestion < questions.length) {
-      setCurrentQuestion(nextQuestion);
-    }
+  const handleSubmit = (e) => {
+    e.preventDefault();
   };
 
-  const handleInputChange = (event) => {
-    const updatedQuestions = [...questions];
-    updatedQuestions[currentQuestion].response = event.target.value;
+  const onChange = (e) => {
+    setValues({ ...values, [e.target.name]: e.target.value });
   };
-
-  const handleSubmit = () => {}
 
   return (
     <div className="app">
-      <>
-        <div className="question-section">
-          <div className="question-count">
-            <span>Question {currentQuestion + 1}</span>/{questions.length}
-          </div>
-          <div className="question-text">
-            {questions[currentQuestion].questionText}
-          </div>
-        </div>
-        <div className="answer-section">
-          <input
-            type="text"
-            value={questions[currentQuestion].response}
-            onChange={handleInputChange}
+      <form onSubmit={handleSubmit}>
+        <h1>Register</h1>
+        {inputs.map((input) => (
+          <FormInput
+            key={input.id}
+            {...input}
+            value={values[input.name]}
+            onChange={onChange}
           />
-          <button>Previous</button>
-          <button onClick={handleAnswerOptionClick}>Next</button>
-          <button type="submit">Submit</button>
-        </div>
-      </>
+        ))}
+        <button>Submit</button>
+      </form>
     </div>
   );
-}
+};
+
+export default App;
