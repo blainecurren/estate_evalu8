@@ -3,6 +3,7 @@ import { useState } from "react";
 // import "./index.css";
 import FormInput from "./components/FormInput/FormInput";
 import ReactSlider from "./components/ReactSlider/ReactSlider";
+import "./app.scss";
 
 const App = () => {
   return (
