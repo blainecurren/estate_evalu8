@@ -1,14 +1,14 @@
 // TODO: Change answerOptions to input based responses
 import { useState } from "react";
-import "./index.css";
+// import "./index.css";
 import FormInput from "./components/FormInput/FormInput";
-import reactSlider from "./components/ReactSlider/ReactSlider";
+import ReactSlider from "./components/ReactSlider/ReactSlider";
 
 const App = () => {
   return (
     <div className="app">
       <div className="sections">
-        <reactSlider />
+        <ReactSlider />
       </div>
     </div>
   );
