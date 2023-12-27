@@ -109,11 +109,9 @@
                 display: none;
               }
             }
-            span {
-              font-size: 12px;
-              font-weight: 600;
-              text-decoration: underline;
-              cursor: pointer;
+
+            .submit {
+              border-radius: 8px;
             }
           }
         }
