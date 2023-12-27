@@ -2,7 +2,7 @@
 import { useState } from "react";
 // import "./index.css";
 // import FormInput from "./components/FormInput/FormInput";
-import ReactSlider from "./components/reactSlider/ReactSlider";
+import ReactSlider from "./components/ReactSlider/ReactSlider";
 import Topbar from "./components/topbar/Topbar";
 import Menu from "./components/menu/Menu";
 import "./app.scss";

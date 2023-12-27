@@ -9,24 +9,24 @@ export default function ReactSlider() {
       id: "1",
       icon: "./assets/mobile.png",
       title: "Web Design",
-      desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. ",
-      img: "https://99designs-blog.imgix.net/blog/wp-content/uploads/2018/10/attachment_100040756-e1538485934255.jpeg?auto=format&q=60&fit=max&w=930",
+      question:
+        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. ",
     },
 
     {
       id: "2",
       icon: "./assets/writing.png",
       title: "Mobile Application",
-      desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. ",
-      img: "https://99designs-blog.imgix.net/blog/wp-content/uploads/2018/10/attachment_100040756-e1538485934255.jpeg?auto=format&q=60&fit=max&w=930",
+      question:
+        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. ",
     },
 
     {
       id: "3",
       icon: "./assets/globe.png",
       title: "Branding",
-      desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. ",
-      img: "https://99designs-blog.imgix.net/blog/wp-content/uploads/2018/10/attachment_100040756-e1538485934255.jpeg?auto=format&q=60&fit=max&w=930",
+      question:
+        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. ",
     },
   ];
 
@@ -52,8 +52,8 @@ export default function ReactSlider() {
                     <img src={d.icon} alt="" />
                   </div>
                   <h2>{d.title}</h2>
-                  <p>{d.desc}</p>
-                  <span>Projects</span>
+                  <p>{d.question}</p>
+                  <button className="submit">Submit</button>
                 </div>
               </div>
               <div className="right">
