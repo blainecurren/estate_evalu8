@@ -8,25 +8,64 @@ export default function ReactSlider() {
     {
       id: "1",
       icon: "./assets/mobile.png",
-      title: "Web Design",
-      question:
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. ",
+      title: "Bedrooms",
+      question: "How many bedrooms?",
     },
 
     {
       id: "2",
       icon: "./assets/writing.png",
-      title: "Mobile Application",
-      question:
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. ",
+      title: "Bathrooms",
+      question: "How many bathrooms?",
     },
 
     {
       id: "3",
       icon: "./assets/globe.png",
-      title: "Branding",
-      question:
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. ",
+      title: "Sq. Ft.",
+      question: "What is the square footage?",
+    },
+    {
+      id: "4",
+      icon: "./assets/globe.png",
+      title: "Rent",
+      question: "What is the rent?",
+    },
+    {
+      id: "5",
+      icon: "./assets/globe.png",
+      title: "Vacancies",
+      question: "How many vacancies if any?",
+    },
+    {
+      id: "6",
+      icon: "./assets/globe.png",
+      title: "Repairs",
+      question: "What is the estimated cost of repairs?",
+    },
+    {
+      id: "7",
+      icon: "./assets/globe.png",
+      title: "Utilities",
+      question: "Estimated cost of monthly utilities?",
+    },
+    {
+      id: "8",
+      icon: "./assets/globe.png",
+      title: "Taxes",
+      question: "What are the estimated taxes?",
+    },
+    {
+      id: "9",
+      icon: "./assets/globe.png",
+      title: "Insurance",
+      question: "What is the estimated insurance?",
+    },
+    {
+      id: "10",
+      icon: "./assets/globe.png",
+      title: "Replacement Reserve",
+      question: "What is your replacement reserve?",
     },
   ];
 
