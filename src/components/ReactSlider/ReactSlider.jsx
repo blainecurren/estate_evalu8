@@ -92,6 +92,7 @@ export default function ReactSlider() {
                   </div>
                   <h2>{d.title}</h2>
                   <p>{d.question}</p>
+                  <input type="text" className="input"/>
                   <button className="submit">Submit</button>
                 </div>
               </div>
