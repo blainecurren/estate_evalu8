@@ -92,18 +92,20 @@ export default function ReactSlider() {
                 </div>
               </div>
               <div className="right">
-                <p>{d.question}</p>
-                <form>
-                  <input
-                    type="text"
-                    className="input"
-                    value={answer}
-                    onChange={(e) => setAnswer(e.target.value)}
-                  />
-                  <button className="submit" onClick={handleSubmit}>
-                    Submit
-                  </button>
-                </form>
+                <div className="rightContainer">
+                  <p>{d.question}</p>
+                  <form>
+                    <input
+                      type="text"
+                      className="input"
+                      value={answer}
+                      onChange={(e) => setAnswer(e.target.value)}
+                    />
+                    <button className="submit" onClick={handleSubmit}>
+                      Submit
+                    </button>
+                  </form>
+                </div>
               </div>
             </div>
           </div>
