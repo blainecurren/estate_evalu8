@@ -1,7 +1,7 @@
 @import "../../global.scss";
 
 .works {
-  background-color: crimson;
+  background-color: $mainColor;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -53,6 +53,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        flex-direction: column;
 
         @include mobile {
           width: 80%;
@@ -67,58 +68,22 @@
           align-items: center;
           justify-content: center;
 
-          .leftContainer {
-            width: 90%;
-            height: 70%;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
+          img {
+            width: 25px;
 
-            .imgContainer {
-              width: 40px;
-              height: 40px;
-              border-radius: 50%;
-              background-color: rgb(245, 179, 155);
-              display: flex;
-              align-items: center;
-              justify-content: center;
-
-              @include mobile {
-                width: 20px;
-                height: 20px;
-              }
-
-              img {
-                width: 25px;
-
-                @include mobile {
-                  width: 15px;
-                }
-              }
+            @include mobile {
+              width: 15px;
             }
-            h2 {
-              font-size: 20px;
-
-              @include mobile {
-                font-size: 13px;
-              }
-            }
-            p {
+          }
+          h2 {
+            font-size: 30px;
+            text-align: center;
+            @include mobile {
               font-size: 13px;
-              @include mobile {
-                display: none;
-              }
-            }
-
-            .input {
-              border-radius: 8px;
-            }
-
-            .submit {
-              border-radius: 8px;
             }
           }
         }
+
         .right {
           flex: 8;
           height: 100%;
@@ -127,9 +92,19 @@
           justify-content: center;
           overflow: hidden;
 
-          img {
-            width: 400px;
-            transform: rotate(-10deg);
+          p {
+            font-size: 13px;
+            @include mobile {
+              display: none;
+            }
+          }
+
+          .input {
+            border-radius: 8px;
+          }
+
+          .submit {
+            border-radius: 8px;
           }
         }
       }
