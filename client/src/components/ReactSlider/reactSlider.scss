@@ -65,8 +65,7 @@
           flex: 4;
           height: 80%;
           display: flex;
-          align-items: center;
-          justify-content: center;
+          align-self: flex-start;
 
           img {
             width: 25px;
@@ -78,6 +77,8 @@
           h2 {
             font-size: 30px;
             text-align: center;
+            padding-left: 10px;
+
             @include mobile {
               font-size: 13px;
             }
@@ -91,9 +92,11 @@
           align-items: center;
           justify-content: center;
           overflow: hidden;
+          flex-direction: column;
 
           p {
-            font-size: 13px;
+            font-size: 20px;
+            padding: 10px;
             @include mobile {
               display: none;
             }
