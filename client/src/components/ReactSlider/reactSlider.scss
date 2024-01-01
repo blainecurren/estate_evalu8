@@ -59,11 +59,15 @@
   }
 }
 
+input {
+  border: none;
+  width: 100%;
+}
+
 form {
   padding: 15px;
   margin: 10px 0px;
   border-radius: 5px;
-  border: 1px solid grey;
 }
 
 button {
