@@ -75,6 +75,14 @@ export default function ReactSlider() {
       : setCurrentSlide(currentSlide < data.length - 1 ? currentSlide + 1 : 0);
   };
 
+  const handleSubmit = (event) => {
+    event.preventDefault();
+
+    alert(answer);
+  };
+
+  const [answer, setAnswer] = useState("");
+
   return (
     <div className="works">
       <div
@@ -92,8 +100,17 @@ export default function ReactSlider() {
                   </div>
                   <h2>{d.title}</h2>
                   <p>{d.question}</p>
-                  <input type="text" className="input"/>
-                  <button className="submit">Submit</button>
+                  <form>
+                    <input
+                      type="text"
+                      className="input"
+                      value={answer}
+                      onChange={(e) => setAnswer(e.target.value)}
+                    />
+                    <button className="submit" onClick={handleSubmit}>
+                      Submit
+                    </button>
+                  </form>
                 </div>
               </div>
               <div className="right">
