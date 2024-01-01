@@ -93,8 +93,8 @@ export default function ReactSlider() {
               </div>
               <div className="right">
                 <div className="rightContainer">
-                  <p>{d.question}</p>
                   <form>
+                    <p>{d.question}</p>
                     <input
                       type="text"
                       className="input"
