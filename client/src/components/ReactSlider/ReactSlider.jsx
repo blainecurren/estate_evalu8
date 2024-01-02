@@ -98,7 +98,6 @@ export default function ReactSlider() {
                     <input
                       type="text"
                       className="input"
-                      placeholder="Answer"
                       value={answer}
                       onChange={(e) => setAnswer(e.target.value)}
                     />
