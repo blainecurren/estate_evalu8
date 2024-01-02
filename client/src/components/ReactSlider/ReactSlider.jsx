@@ -59,16 +59,15 @@ export default function ReactSlider() {
     },
   ];
 
-  const handleClick = (way) => {
-    way === "left"
-      ? setCurrentSlide(currentSlide > 0 ? currentSlide - 1 : 2)
-      : setCurrentSlide(currentSlide < data.length - 1 ? currentSlide + 1 : 0);
-  };
+  // const handleClick = (way) => {
+  //   way === "left"
+  //     ? setCurrentSlide(currentSlide > 0 ? currentSlide - 1 : 2)
+  //     : setCurrentSlide(currentSlide < data.length - 1 ? currentSlide + 1 : 0);
+  // };
 
   const handleSubmit = (event) => {
     event.preventDefault();
-
-    alert(answer);
+    setCurrentSlide(currentSlide < data.length - 1 ? currentSlide + 1 : 0);
   };
 
   const [answer, setAnswer] = useState("");
@@ -111,7 +110,7 @@ export default function ReactSlider() {
           </div>
         ))}
       </div>
-      <img
+      {/* <img
         src="assets/arrow.png"
         className="arrow left"
         alt=""
@@ -122,7 +121,7 @@ export default function ReactSlider() {
         className="arrow right"
         alt=""
         onClick={() => handleClick()}
-      />
+      /> */}
     </div>
   );
 }
