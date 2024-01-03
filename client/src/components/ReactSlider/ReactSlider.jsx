@@ -2,6 +2,7 @@ import { useState } from "react";
 import "./reactSlider.scss";
 
 export default function ReactSlider() {
+  const userInputs = [];
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const data = [
@@ -67,6 +68,18 @@ export default function ReactSlider() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    handleSlider();
+    captureInput();
+  };
+
+  const captureInput = (event) => {
+    const userInput = document.getElementById("userInput").value;
+    if (userInput.trim() !== "") {
+      userInputs.push(userInput);
+    }
+  };
+
+  const handleSlider = (event) => {
     setCurrentSlide(currentSlide < data.length - 1 ? currentSlide + 1 : 0);
   };
 
@@ -97,6 +110,7 @@ export default function ReactSlider() {
                     <input
                       type="text"
                       className="input"
+                      id="userInput"
                       value={answer}
                       onChange={(e) => setAnswer(e.target.value)}
                     />
