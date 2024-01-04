@@ -60,12 +60,6 @@ export default function ReactSlider() {
     },
   ];
 
-  // const handleClick = (way) => {
-  //   way === "left"
-  //     ? setCurrentSlide(currentSlide > 0 ? currentSlide - 1 : 2)
-  //     : setCurrentSlide(currentSlide < data.length - 1 ? currentSlide + 1 : 0);
-  // };
-
   const handleSubmit = (event) => {
     event.preventDefault();
     handleSlider();
@@ -79,8 +73,11 @@ export default function ReactSlider() {
     }
   };
 
-  const handleSlider = (event) => {
-    setCurrentSlide(currentSlide < data.length - 1 ? currentSlide + 1 : 0);
+  const handleSlider = (value) => {
+    const updatedData = [...data];
+    updatedData[currentSlide].answer = parseInt(value);
+    setData(updatedData);
+    // setCurrentSlide(currentSlide < data.length - 1 ? currentSlide + 1 : 0);
   };
 
   const [answer, setAnswer] = useState("");
@@ -124,18 +121,6 @@ export default function ReactSlider() {
           </div>
         ))}
       </div>
-      {/* <img
-        src="assets/arrow.png"
-        className="arrow left"
-        alt=""
-        onClick={() => handleClick("left")}
-      />
-      <img
-        src="assets/arrow.png"
-        className="arrow right"
-        alt=""
-        onClick={() => handleClick()}
-      /> */}
     </div>
   );
 }
