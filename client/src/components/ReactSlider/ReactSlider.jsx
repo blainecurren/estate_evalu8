@@ -3,7 +3,7 @@ import "./reactSlider.scss";
 
 export default function ReactSlider() {
   const userInputs = [];
-  const [currentSlide, setCurrentSlide] = useState(0);
+  const [currentSlide, setCurrentSlide, setData] = useState(0);
 
   const data = [
     {
@@ -77,7 +77,7 @@ export default function ReactSlider() {
     const updatedData = [...data];
     updatedData[currentSlide].answer = parseInt(value);
     setData(updatedData);
-    // setCurrentSlide(currentSlide < data.length - 1 ? currentSlide + 1 : 0);
+    setCurrentSlide(currentSlide < data.length - 1 ? currentSlide + 1 : 0);
   };
 
   const [answer, setAnswer] = useState("");
