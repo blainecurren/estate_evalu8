@@ -2,93 +2,43 @@ import { useState } from "react";
 import "./reactSlider.scss";
 
 export default function ReactSlider() {
-  const userInputs = [];
-  const [currentSlide, setCurrentSlide, setData] = useState(0);
-
+  const [currentSlide, setCurrentSlide] = useState(0);
   const data = [
     {
       id: "1",
-      title: "Bedrooms",
-      question: "How many bedrooms?",
+      icon: "./assets/mobile.png",
+      title: "Web Design",
+      desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. ",
+      img: "https://99designs-blog.imgix.net/blog/wp-content/uploads/2018/10/attachment_100040756-e1538485934255.jpeg?auto=format&q=60&fit=max&w=930",
     },
-
     {
       id: "2",
-      title: "Bathrooms",
-      question: "How many bathrooms?",
+      icon: "./assets/globe.png",
+      title: "Mobile Application",
+      desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+      img: "https://i.pinimg.com/originals/e9/c9/2f/e9c92f7869d682a6fa5a97fb8a298f30.jpg",
     },
-
     {
       id: "3",
-      title: "Sq. Ft.",
-      question: "What is the square footage?",
-    },
-    {
-      id: "4",
-      title: "Rent",
-      question: "What is the rent?",
-    },
-    {
-      id: "5",
-      title: "Vacancies",
-      question: "How many vacancies if any?",
-    },
-    {
-      id: "6",
-      title: "Repairs",
-      question: "What is the estimated cost of repairs?",
-    },
-    {
-      id: "7",
-      title: "Utilities",
-      question: "Estimated cost of monthly utilities?",
-    },
-    {
-      id: "8",
-      title: "Taxes",
-      question: "What are the estimated taxes?",
-    },
-    {
-      id: "9",
-      title: "Insurance",
-      question: "What is the estimated insurance?",
-    },
-    {
-      id: "10",
-      title: "Replacement Reserve",
-      question: "What is your replacement reserve?",
+      icon: "./assets/writing.png",
+      title: "Branding",
+      desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+      img: "https://i.pinimg.com/originals/a9/f6/94/a9f69465d972a004ad581f245d6ad581.jpg",
     },
   ];
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    handleSlider();
-    captureInput();
+  const handleClick = (way) => {
+    way === "left"
+      ? setCurrentSlide(currentSlide > 0 ? currentSlide - 1 : 2)
+      : setCurrentSlide(currentSlide < data.length - 1 ? currentSlide + 1 : 0);
   };
-
-  const captureInput = (event) => {
-    const userInput = document.getElementById("userInput").value;
-    if (userInput.trim() !== "") {
-      userInputs.push(userInput);
-    }
-  };
-
-  const handleSlider = (value) => {
-    const updatedData = [...data];
-    updatedData[currentSlide].answer = parseInt(value);
-    setData(updatedData);
-    setCurrentSlide(currentSlide < data.length - 1 ? currentSlide + 1 : 0);
-  };
-
-  const [answer, setAnswer] = useState("");
 
   return (
-    <div className="works">
+    <div className="works" id="works">
       <div
         className="slider"
-        style={{ transform: `translate(-${currentSlide * 100}vw)` }}
+        style={{ transform: `translateX(-${currentSlide * 100}vw)` }}
       >
-        {" "}
         {data.map((d) => (
           <div className="container">
             <div className="item">
@@ -98,29 +48,32 @@ export default function ReactSlider() {
                     <img src={d.icon} alt="" />
                   </div>
                   <h2>{d.title}</h2>
+                  <p>{d.desc}</p>
+                  <span>Projects</span>
                 </div>
               </div>
               <div className="right">
-                <div className="rightContainer">
-                  <form>
-                    <p>{d.question}</p>
-                    <input
-                      type="text"
-                      className="input"
-                      id="userInput"
-                      value={answer}
-                      onChange={(e) => setAnswer(e.target.value)}
-                    />
-                    <button className="submit" onClick={handleSubmit}>
-                      Submit
-                    </button>
-                  </form>
-                </div>
+                <img
+                  src="https://99designs-blog.imgix.net/blog/wp-content/uploads/2018/10/attachment_100040756-e1538485934255.jpeg?auto=format&q=60&fit=max&w=930"
+                  alt=""
+                />
               </div>
             </div>
           </div>
         ))}
       </div>
+      <img
+        src="assets/arrow.png"
+        className="arrow left"
+        alt=""
+        onClick={() => handleClick("left")}
+      />
+      <img
+        src="assets/arrow.png"
+        className="arrow right"
+        alt=""
+        onClick={() => handleClick()}
+      />
     </div>
   );
 }
