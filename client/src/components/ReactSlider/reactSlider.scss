@@ -72,44 +72,26 @@
             height: 70%;
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
+            justify-content: center;
 
-            .imgContainer {
-              width: 40px;
-              height: 40px;
-              border-radius: 50%;
-              background-color: rgb(245, 179, 155);
-              display: flex;
-              align-items: center;
-              justify-content: center;
-
-              @include mobile {
-                width: 20px;
-                height: 20px;
-              }
-
-              img {
-                width: 25px;
-
-                @include mobile {
-                  width: 15px;
-                }
-              }
-            }
             h2 {
               font-size: 20px;
+              text-align: center;
+              border-bottom: solid 1px black;
 
               @include mobile {
                 font-size: 13px;
               }
             }
             p {
-              font-size: 13px;
+              font-size: 18px;
+              text-align: center;
               @include mobile {
                 display: none;
               }
             }
-            span {
+            button {
+              border: 50%;
               font-size: 12px;
               font-weight: 600;
               text-decoration: underline;
